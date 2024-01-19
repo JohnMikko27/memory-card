@@ -1,12 +1,14 @@
 import { useState } from "react";
+import Header from "./components/Header";
+import CardContainer from "./components/CardContainer";
 
 function App() {
-  const [count, setCount] = useState(0);
-
+  
   return (
-    <>
-      hello world by mikkoss
-    </>
+    <div>
+      <Header/>
+      <CardContainer/>
+    </div>
   );
 }
 
