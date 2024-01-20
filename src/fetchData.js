@@ -9,4 +9,13 @@ const fetchData = async() => {
   return images;
 };
 
+const exampleImages = [
+  {url: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/5.png", id: 0}, 
+  {url: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png", id: 1}, 
+  {url: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/2.png", id: 2}, 
+  {url: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/3.png", id: 3}
+
+];
+
 export default fetchData;
+export { exampleImages };

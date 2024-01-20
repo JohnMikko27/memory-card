@@ -1,29 +1,34 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Header from "./components/Header";
 import CardContainer from "./components/CardContainer";
+import fetchData from "./fetchData";
+import { exampleImages } from "./fetchData";
 
 function App() {
-  const [clicked, setClicked] = useState([]);
+  const [clicked, setClicked] = useState([1]);
+  const [images, setImages] = useState(exampleImages);
+  // i think i have to intialize images with images already so that it doesnt break
 
   const placeholder = [{text: "0", id: 0}, {text: "1", id: 1},
     {text: "2", id: 2}, {text: "3", id: 3}, {text: "4", id: 4},
     {text: "5", id: 5}, {text: "6", id: 6}, {text: "7", id: 7}, {text: "8", id: 8}
   ];
-  
+
   const handleClickCard = (e) => {
-    const hasClicked = clicked.find((element) => element === e.target.textContent);
+    console.log(e.target.id);
+    const hasClicked = clicked.find((element) => element === e.target.id);
     if (hasClicked) {
       console.log("clicked bfore");
       return;
     }
     console.log("not clicked ");
-    setClicked([...clicked, e.target.textContent]);
+    setClicked([...clicked, e.target.id]);
   };
 
   return (
     <div>
       <Header/>
-      <CardContainer placeholder={placeholder} handleClickCard={handleClickCard}/>
+      <CardContainer handleClickCard={handleClickCard} images={images}/>
     </div>
   );
 }

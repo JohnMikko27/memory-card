@@ -1,8 +1,11 @@
 import "../styles/Card.css";
 
-const Card = ({text, handleClickCard}) => {
+const Card = ({src, handleClickCard, id}) => {
   return (
-    <div className="card" onClick={handleClickCard}>{text}</div>
+    <div>
+      <img src={src} alt="" onClick={handleClickCard} id={id} className="card"/>
+    </div>
+    
   );
 };
 
