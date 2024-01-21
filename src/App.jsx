@@ -16,6 +16,8 @@ function App() {
 
   const handleClickCard = (e) => {
     console.log(e.target.id);
+    shuffleArray(images);
+    setImages([...images]);
     const hasClicked = clicked.find((element) => element === e.target.id);
     if (hasClicked) {
       console.log("clicked bfore");
@@ -32,5 +34,14 @@ function App() {
     </div>
   );
 }
+
+const shuffleArray = array => {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    const temp = array[i];
+    array[i] = array[j];
+    array[j] = temp;
+  }
+};
 
 export default App;

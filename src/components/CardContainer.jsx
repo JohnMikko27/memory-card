@@ -12,7 +12,7 @@ const CardContainer = ({handleClickCard, images}) => {
     return numbers;
   };
   const randomNums = getRandomNumbers();
-  shuffleArray(images);
+  console.log(images);
   return (
     <div className="cardContainer">
       {/* <Card handleClickCard={handleClickCard} src={images[0].url}/> 
@@ -27,13 +27,5 @@ const CardContainer = ({handleClickCard, images}) => {
   );
 };
 
-const shuffleArray = array => {
-  for (let i = array.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    const temp = array[i];
-    array[i] = array[j];
-    array[j] = temp;
-  }
-};
 
 export default CardContainer;
