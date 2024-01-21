@@ -8,12 +8,6 @@ function App() {
   const [clicked, setClicked] = useState([]);
   const [images, setImages] = useState(exampleImages);
   const [score, setScore] = useState({current: 0, best: 0});
-  // i think i have to intialize images with images already so that it doesnt break
-
-  const placeholder = [{text: "0", id: 0}, {text: "1", id: 1},
-    {text: "2", id: 2}, {text: "3", id: 3}, {text: "4", id: 4},
-    {text: "5", id: 5}, {text: "6", id: 6}, {text: "7", id: 7}, {text: "8", id: 8}
-  ];
 
   const handleClickCard = (e) => {
     console.log(e.target.id);

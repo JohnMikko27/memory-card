@@ -5,7 +5,6 @@ const Card = ({src, handleClickCard, id}) => {
     <div>
       <img src={src} alt="" onClick={handleClickCard} id={id} className="card"/>
     </div>
-    
   );
 };
 
