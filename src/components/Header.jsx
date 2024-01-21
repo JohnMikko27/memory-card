@@ -1,11 +1,11 @@
 import Title from "./Title";
 import Scoreboard from "./Scoreboard";
 
-const Header = () => {
+const Header = ({current, best}) => {
   return (
     <div>
       <Title/>
-      <Scoreboard/>
+      <Scoreboard current={current} best={best}/>
     </div>
   );
 };

@@ -5,8 +5,9 @@ import fetchData from "./fetchData";
 import { exampleImages } from "./fetchData";
 
 function App() {
-  const [clicked, setClicked] = useState([1]);
+  const [clicked, setClicked] = useState([]);
   const [images, setImages] = useState(exampleImages);
+  const [score, setScore] = useState({current: 0, best: 0});
   // i think i have to intialize images with images already so that it doesnt break
 
   const placeholder = [{text: "0", id: 0}, {text: "1", id: 1},
@@ -21,15 +22,19 @@ function App() {
     const hasClicked = clicked.find((element) => element === e.target.id);
     if (hasClicked) {
       console.log("clicked bfore");
+      if (score.current > score.best) setScore({best: score.current, current: 0});
+      else setScore({...score, current: 0});
+      setClicked([]);
       return;
     }
-    console.log("not clicked ");
+    console.log("not clicked");
     setClicked([...clicked, e.target.id]);
+    setScore({...score, current: score.current + 1});
   };
 
   return (
     <div>
-      <Header/>
+      <Header current={score.current} best={score.best}/>
       <CardContainer handleClickCard={handleClickCard} images={images}/>
     </div>
   );

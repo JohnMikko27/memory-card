@@ -1,8 +1,8 @@
-const Scoreboard = () => {
+const Scoreboard = ({current, best}) => {
   return (
     <div>
-      <div>current: 3</div>
-      <div>best: 2</div>
+      <div>current: {current}</div>
+      <div>best: {best}</div>
     </div>
   );
 };
