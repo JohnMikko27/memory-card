@@ -1,5 +1,14 @@
 .card {
-  border: 1px solid #ffc800;
   width: 70%;
   height: auto;
+  box-shadow: 1px 1px 14px 0.1px #ffc800;
+  border-radius: 10px;
+  background-color: black;
+}
+
+.card:hover {
+  cursor: pointer;
+  background-color: rgb(45, 45, 45);
+  box-shadow: 1px 1px 14px 0.1px #846806;
+  transition: background-color, box-shadow, 0.2s;
 }
