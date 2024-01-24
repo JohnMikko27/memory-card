@@ -1,14 +1,12 @@
 import { useEffect, useState } from "react";
 import Header from "./components/Header";
 import CardContainer from "./components/CardContainer";
-import fetchData from "./fetchData";
-import { exampleImages } from "./fetchData";
+import "./styles/App.css";
 
 function App() {
   const [clicked, setClicked] = useState([]);
   const [images, setImages] = useState([]);
   const [score, setScore] = useState({current: 0, best: 0});
-  const [photos, setPhotos] = useState([]);
 
   useEffect(() => {
     const fetchData = async() => {
@@ -17,7 +15,6 @@ function App() {
         const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${randomNum}`);
         const data = await response.json();
         if (!ignore) {
-          // dataArray.push(data);
           setImages((images) => ([...images, data]));
         }
       }
@@ -47,8 +44,7 @@ function App() {
   };
 
   return (
-    <div>
-      {console.log("length: " + photos.length)}
+    <div className="app">
       <Header current={score.current} best={score.best}/>
       {images && <CardContainer handleClickCard={handleClickCard} images={images}/>}
     </div>

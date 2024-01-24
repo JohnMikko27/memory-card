@@ -1,6 +1,12 @@
 .cardContainer {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  width: 200px;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  justify-items: center;
+  gap: 1rem;
+  background-color: rgb(25, 25, 25);
+}
+
+img {
+  width: 100%;
   height: auto;
 }
