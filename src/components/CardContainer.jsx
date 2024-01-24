@@ -6,7 +6,7 @@ const CardContainer = ({handleClickCard, images}) => {
   return (
     <div className="cardContainer">
       {
-        images.map((image) => <Card src={image.url} key={image.id} 
+        images.map((image) => <Card src={image.sprites.front_default} key={image.id} 
           id={image.id} handleClickCard={handleClickCard}/>)
       }
     </div>

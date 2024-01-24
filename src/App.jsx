@@ -6,8 +6,28 @@ import { exampleImages } from "./fetchData";
 
 function App() {
   const [clicked, setClicked] = useState([]);
-  const [images, setImages] = useState(exampleImages);
+  const [images, setImages] = useState([]);
   const [score, setScore] = useState({current: 0, best: 0});
+  const [photos, setPhotos] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async() => {
+      for (let i = 0; i < 4; i++) {
+        const randomNum = Math.floor(Math.random() * 400 + 1);
+        const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${randomNum}`);
+        const data = await response.json();
+        if (!ignore) {
+          // dataArray.push(data);
+          setImages((images) => ([...images, data]));
+        }
+      }
+    };
+    let ignore = false;
+    fetchData();
+    return () => {
+      ignore = true;
+    };
+  }, []);
 
   const handleClickCard = (e) => {
     console.log(e.target.id);
@@ -28,8 +48,9 @@ function App() {
 
   return (
     <div>
+      {console.log("length: " + photos.length)}
       <Header current={score.current} best={score.best}/>
-      <CardContainer handleClickCard={handleClickCard} images={images}/>
+      {images && <CardContainer handleClickCard={handleClickCard} images={images}/>}
     </div>
   );
 }
