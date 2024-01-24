@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Header from "./components/Header";
 import CardContainer from "./components/CardContainer";
+import Footer from "./components/Footer";
 import "./styles/App.css";
 
 function App() {
@@ -10,7 +11,7 @@ function App() {
 
   useEffect(() => {
     const fetchData = async() => {
-      for (let i = 0; i < 4; i++) {
+      for (let i = 0; i < 12; i++) {
         const randomNum = Math.floor(Math.random() * 400 + 1);
         const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${randomNum}`);
         const data = await response.json();
@@ -47,6 +48,7 @@ function App() {
     <div className="app">
       <Header current={score.current} best={score.best}/>
       {images && <CardContainer handleClickCard={handleClickCard} images={images}/>}
+      <Footer/>
     </div>
   );
 }

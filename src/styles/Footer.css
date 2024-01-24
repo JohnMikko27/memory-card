@@ -1,0 +1,12 @@
+.footer {
+  color: #ffc800;
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  padding: 4rem 2rem;
+  background-color: black;
+}
+
+a {
+  color: #ffc800;
+}
