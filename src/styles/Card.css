@@ -12,3 +12,9 @@
   box-shadow: 1px 1px 14px 0.1px #846806;
   transition: background-color, box-shadow, 0.2s;
 }
+
+@media (max-width: 500px) {
+  .card {
+    width: 80%;
+  }
+}

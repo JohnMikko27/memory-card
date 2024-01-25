@@ -10,3 +10,11 @@ img {
   width: 100%;
   height: auto;
 }
+
+@media (max-width: 500px) {
+  .cardContainer {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 2.5rem;
+    width: 100%;
+  }
+}

@@ -7,8 +7,25 @@ body {
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 }
 
+body {
+  height: 100vh;
+}
+
+#root {
+  height: 100%;
+}
+
 .app {
   display: grid;
   gap: 2rem;
   align-items: center;
+}
+
+@media (max-width: 500px) {
+  .app {
+    display: grid;
+    gap: 2rem;
+    height: 100%;
+    align-items: start;
+  }
 }
