@@ -2,7 +2,6 @@ import Card from "./Card";
 import "../styles/CardContainer.css";
 
 const CardContainer = ({handleClickCard, images}) => {
-  
   return (
     <div className="cardContainer">
       {
