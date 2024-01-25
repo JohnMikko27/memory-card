@@ -4,6 +4,8 @@
   box-shadow: 1px 1px 14px 0.1px #ffc800;
   border-radius: 10px;
   background-color: black;
+  display: grid;
+  justify-items: center;
 }
 
 .card:hover {
@@ -13,8 +15,17 @@
   transition: background-color, box-shadow, 0.2s;
 }
 
+.name {
+  color: white;
+  font-size: 1.2rem;
+}
+
 @media (max-width: 500px) {
   .card {
     width: 80%;
+  }
+
+  .name {
+    font-size: 0.6rem;
   }
 }
