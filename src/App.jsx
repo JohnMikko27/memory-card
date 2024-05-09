@@ -64,7 +64,9 @@ const getRandomNumbers = () => {
   const numbers = [];
   while (numbers.length !== 12) {
     const randomNum = Math.floor(Math.random() * 400 + 1);
-    if (randomNum in numbers) continue;
+    if (randomNum in numbers) {
+      continue;
+    }
     numbers.push(randomNum);
   }
   return numbers;
